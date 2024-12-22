@@ -51,13 +51,14 @@ fn has_xmas(y_dir: isize, x_dir: isize, char_array: &Vec<Vec<char>>, x: usize, y
 
     if char_array[y][x] != 'X' {
         return Ok(false);
-
     }
+
     let iy = isize::try_from(y)?;
     let ix = isize::try_from(x)?;
     let iwidth = isize::try_from(width)?;
     let iheight = isize::try_from(height)?;
 
+    // Bounds Check
     if iy  + y_dir * 3< 0isize || ix + x_dir * 3< 0isize || ix + x_dir * 3> iwidth - 1|| iy + y_dir * 3> iheight - 1 {
         return Ok(false);
     }
@@ -69,7 +70,6 @@ fn has_xmas(y_dir: isize, x_dir: isize, char_array: &Vec<Vec<char>>, x: usize, y
         if char_array[y_index][x_index] != MAS[usize::try_from(index_step - 1)?] {
             return Ok(false);
         }
-
     }
     
     return Ok(true);
