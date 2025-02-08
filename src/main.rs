@@ -1,6 +1,7 @@
 use std::env;
 
 mod utils;
+mod day6;
 mod day5;
 mod day4;
 mod day3;
@@ -16,6 +17,7 @@ fn main() -> anyhow::Result<()> {
         3 => day3::solve(),
         4 => day4::solve(),
         5 => day5::solve(),
+        6 => day6::solve(),
         _ => todo!("Unsupported")
     }
 }
